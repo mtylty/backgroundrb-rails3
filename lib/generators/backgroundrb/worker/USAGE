@@ -8,7 +8,7 @@ Description:
     test/unit.
 
 Example:
-    ./script/generate worker Tail
+    ./script/generate backgroundrb:worker Tail
 
     This will create an Tail worker:
         Model:      lib/workers/tail_worker.rb
