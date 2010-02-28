@@ -1,6 +1,6 @@
 module Backgroundrb
   module Generators
-    class WorkerGenerator < Rails::Generator::NamedBase
+    class WorkerGenerator < Rails::Generators::NamedBase
       def self.source_root
         @source_root ||= File.expand_path('../templates', __FILE__)
       end
