@@ -121,8 +121,6 @@ Jeweler::Tasks.new do |gem|
     Since a Rails application blocks while serving a request it is best to move long-running tasks off into a background process that is divorced from http request/response cycle.}
   gem.email = "mtylty@gmail.com"
   gem.authors = ["Matteo Latini"]
-  gem.version = "1.1"
-  gem.add_dependency 'chronic', '>= 0.2.3'
-  gem.add_dependency 'packet', '>= 0.1.15'
+  gem.version = "1.1.1"
 end
 Jeweler::RubygemsDotOrgTasks.new
