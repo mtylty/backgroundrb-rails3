@@ -112,7 +112,6 @@ end
 
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
-  # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "backgroundrb-rails3"
   gem.homepage = "http://github.com/mtylty/backgroundrb-rails3"
   gem.license = "MIT"
@@ -123,9 +122,7 @@ Jeweler::Tasks.new do |gem|
   gem.email = "mtylty@gmail.com"
   gem.authors = ["Matteo Latini"]
   gem.version = "1.1"
-  # Include your dependencies below. Runtime dependencies are required when using your gem,
-  # and development dependencies are only needed for development (ie running rake tasks, tests, etc)
-  #  gem.add_runtime_dependency 'jabber4r', '> 0.1'
-  #  gem.add_development_dependency 'rspec', '> 1.2.3'
+  gem.add_dependency 'chronic', '>= 0.2.3'
+  gem.add_dependency 'packet', '>= 0.1.15'
 end
 Jeweler::RubygemsDotOrgTasks.new
