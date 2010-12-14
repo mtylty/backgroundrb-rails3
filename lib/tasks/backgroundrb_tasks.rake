@@ -75,7 +75,7 @@ namespace :backgroundrb do
   task :queue_migration => :environment do
     raise "Task unavailable to this database (no migration support)" unless ActiveRecord::Base.connection.supports_migrations?
     require 'rails/generators'
-    Rails::Generators::invoke('backgroundrb:bdrb_migration', ENV['MIGRATION'] || 'BackgroundrbJob')
+    Rails::Generators::invoke('backgroundrb:bdrb_migration', [ENV['MIGRATION'] || 'BackgroundrbJob'])
   end
 
   desc 'Remove backgroundrb from your rails application'
