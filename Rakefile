@@ -101,3 +101,28 @@ namespace :git do
   end
 end
 
+require 'bundler'
+begin
+  Bundler.setup(:default, :development)
+rescue Bundler::BundlerError => e
+  $stderr.puts e.message
+  $stderr.puts "Run `bundle install` to install missing gems"
+  exit e.status_code
+end
+
+require 'jeweler'
+Jeweler::Tasks.new do |gem|
+  gem.name = "backgroundrb-rails3"
+  gem.homepage = "http://github.com/mtylty/backgroundrb-rails3"
+  gem.license = "MIT"
+  gem.summary = %Q{BackgrounDRb is a Ruby job server and scheduler.}
+  gem.description = %Q{
+    BackgrounDRb is a Ruby job server and scheduler. Its main intent is to be used with Ruby on Rails applications for offloading long-running tasks. 
+    Since a Rails application blocks while serving a request it is best to move long-running tasks off into a background process that is divorced from http request/response cycle.}
+  gem.email = "mtylty@gmail.com"
+  gem.authors = ["Matteo Latini"]
+  gem.version = "1.1"
+  gem.add_dependency 'chronic', '>= 0.2.3'
+  gem.add_dependency 'packet', '>= 0.1.15'
+end
+Jeweler::RubygemsDotOrgTasks.new

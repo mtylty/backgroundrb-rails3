@@ -11,3 +11,8 @@ doc/output/faq
 doc/output/index.html
 coverage
 .dotest
+.bundle
+pkg
+tmp
+Gemfile.lock
+.DS_Store

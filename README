@@ -15,6 +15,8 @@ Copyright (c) 2007 Hemant Kumar (gethemant [at] gmail.com )
 
 == Usage
 
-Please look into http://backgroundrb.rubyforge.org
+Install using bundler via rubygems by adding gem 'backgroundrb-rails3' to your Gemfile
+
+and then look into http://backgroundrb.rubyforge.org for instructions (DISCLAIMER: documentation on rubyforge is for the Rails2 version of backgroundrb)
 
 Something else here.

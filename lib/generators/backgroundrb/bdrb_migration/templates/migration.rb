@@ -1,6 +1,6 @@
-class <%= class_name %> < ActiveRecord::Migration
+class BackgroundrbCreate<%= table_name.camelize %> < ActiveRecord::Migration
   def self.up
-    create_table :<%= bdrb_table_name %> do |t|
+    create_table :<%= table_name %> do |t|
       t.column :args, :text
       t.column :worker_name, :string
       t.column :worker_method, :string
@@ -22,6 +22,6 @@ class <%= class_name %> < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :<%= bdrb_table_name %>
+    drop_table :<%= table_name %>
   end
 end

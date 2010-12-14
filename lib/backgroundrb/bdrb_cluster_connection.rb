@@ -14,7 +14,7 @@ module BackgrounDRb
       @last_polled_time = Time.now
       @request_count = 0
 
-      initialize_memcache if BDRB_CONFIG[:backgroundrb][:result_storage] == 'memcache'
+      initialize_memcache if BackgrounDRb::BDRB_CONFIG[:backgroundrb][:result_storage] == 'memcache'
       establish_connections
       @round_robin = (0...@backend_connections.length).to_a
     end
@@ -31,13 +31,13 @@ module BackgrounDRb
         :urlencode => false
       }
       @cache = MemCache.new(memcache_options)
-      @cache.servers = BDRB_CONFIG[:memcache].split(',')
+      @cache.servers = BackgrounDRb::BDRB_CONFIG[:memcache].split(',')
     end
 
     # initialize all backend server connections
     def establish_connections
       klass = Struct.new(:ip,:port)
-      if t_servers = BDRB_CONFIG[:client]
+      if t_servers = BackgrounDRb::BDRB_CONFIG[:client]
         connections = t_servers.split(',')
         connections.each do |conn_string|
           ip = conn_string.split(':')[0]
@@ -45,7 +45,7 @@ module BackgrounDRb
           @bdrb_servers << klass.new(ip,port)
         end
       end
-      @bdrb_servers << klass.new(BDRB_CONFIG[:backgroundrb][:ip],BDRB_CONFIG[:backgroundrb][:port].to_i)
+      @bdrb_servers << klass.new(BackgrounDRb::BDRB_CONFIG[:backgroundrb][:ip],BackgrounDRb::BDRB_CONFIG[:backgroundrb][:port].to_i)
       @bdrb_servers.each_with_index do |connection_info,index|
         next if @backend_connections.detect { |x| x.server_info == "#{connection_info.ip}:#{connection_info.port}" }
         @backend_connections << Connection.new(connection_info.ip,connection_info.port,self)
@@ -89,7 +89,7 @@ module BackgrounDRb
 
     # find the local configured connection
     def find_local
-      find_connection("#{BDRB_CONFIG[:backgroundrb][:ip]}:#{BDRB_CONFIG[:backgroundrb][:port]}")
+      find_connection("#{BackgrounDRb::BDRB_CONFIG[:backgroundrb][:ip]}:#{BackgrounDRb::BDRB_CONFIG[:backgroundrb][:port]}")
     end
 
     # return the worker proxy
