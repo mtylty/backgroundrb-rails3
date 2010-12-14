@@ -113,8 +113,8 @@ end
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
-  gem.name = "backgroundrb"
-  gem.homepage = "http://github.com/mtylty/backgroundrb"
+  gem.name = "backgroundrb-rails3"
+  gem.homepage = "http://github.com/mtylty/backgroundrb-rails3"
   gem.license = "MIT"
   gem.summary = %Q{BackgrounDRb is a Ruby job server and scheduler.}
   gem.description = %Q{
@@ -122,6 +122,7 @@ Jeweler::Tasks.new do |gem|
     Since a Rails application blocks while serving a request it is best to move long-running tasks off into a background process that is divorced from http request/response cycle.}
   gem.email = "mtylty@gmail.com"
   gem.authors = ["Matteo Latini"]
+  gem.version = "1.1"
   # Include your dependencies below. Runtime dependencies are required when using your gem,
   # and development dependencies are only needed for development (ie running rake tasks, tests, etc)
   #  gem.add_runtime_dependency 'jabber4r', '> 0.1'

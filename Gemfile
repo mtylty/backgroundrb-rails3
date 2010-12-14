@@ -1,7 +1,7 @@
 source "http://rubygems.org"
 
-gem 'chronic'
-gem 'packet'
+gem 'chronic', '>= 0.2.3'
+gem 'packet', '0.1.15'
 
 group :development do
   gem "shoulda", ">= 0"

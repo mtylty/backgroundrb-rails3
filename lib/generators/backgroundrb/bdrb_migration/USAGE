@@ -3,10 +3,10 @@ Description:
     Pass the migration name, either CamelCased or under_scored, as an argument.
 
 Example:
-    ./script/generate backgroundrb:bdrb_migration CreateBackgroundrbQueue
+    rails generate backgroundrb:bdrb_migration BackgroundrbJob
 
     Assuming this is run at 09:00:15h on 12 September, 2008, this will create the
     CreateBackgroundrbQueue migration in:
 
-        db/migrate/20080912090015_create_backgroundrb_queue.rb
+        db/migrate/20080912090015_backgroundrb_create_backgroundrb_jobs.rb
 
