@@ -118,7 +118,9 @@ Jeweler::Tasks.new do |gem|
   gem.summary = %Q{BackgrounDRb is a Ruby job server and scheduler.}
   gem.description = %Q{
     BackgrounDRb is a Ruby job server and scheduler. Its main intent is to be used with Ruby on Rails applications for offloading long-running tasks. 
-    Since a Rails application blocks while serving a request it is best to move long-running tasks off into a background process that is divorced from http request/response cycle.}
+    Since a Rails application blocks while serving a request it is best to move long-running tasks off into a background process that is divorced from http request/response cycle.
+    This is the RoR 3 version (Railtie based) of the gem. Please read the GitHub homepage for installation instructions.
+  }
   gem.email = "mtylty@gmail.com"
   gem.authors = ["Matteo Latini"]
   gem.version = "1.1.3"
