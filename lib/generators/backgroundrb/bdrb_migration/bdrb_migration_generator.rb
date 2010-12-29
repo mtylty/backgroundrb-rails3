@@ -8,7 +8,7 @@ module Backgroundrb
       end
 
       def copy_backgroundrb_migration
-        migration_template "migration.rb", "db/migrate/backgroundrb_create_#{table_name}"
+        migration_template "migration.rb", "db/migrate/backgroundrb_create_backgroundrb_queue_table"
       end
     end
   end

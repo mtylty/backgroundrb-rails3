@@ -1,6 +1,6 @@
-class BackgroundrbCreate<%= table_name.camelize %> < ActiveRecord::Migration
+class CreateBackgroundrbQueueTable < ActiveRecord::Migration
   def self.up
-    create_table :<%= table_name %> do |t|
+    create_table :bdrb_job_queues do |t|
       t.column :args, :text
       t.column :worker_name, :string
       t.column :worker_method, :string
@@ -22,6 +22,6 @@ class BackgroundrbCreate<%= table_name.camelize %> < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :<%= table_name %>
+    drop_table :bdrb_job_queues
   end
 end

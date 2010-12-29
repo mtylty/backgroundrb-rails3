@@ -35,7 +35,7 @@ module BackgrounDRb
       end
       BackgrounDRb::BDRB_CONFIG = config.bdrb.config
 
-      MiddleMan = BackgrounDRb::ClusterConnection.new if File.exists?(config_file)
+      ::MiddleMan = BackgrounDRb::ClusterConnection.new if File.exists?(config_file)
     end
 
     rake_tasks do

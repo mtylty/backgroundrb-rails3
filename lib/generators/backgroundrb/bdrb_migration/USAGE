@@ -1,12 +1,14 @@
 Description:
     Creates a migration to add the job queue table used by BackgrounDRb.
-    Pass the migration name, either CamelCased or under_scored, as an argument.
+    At present, the migration name is FIXED!
+    This is mainly because the ActiveRecord model's name for storing the 
+    queues is fixed.
 
 Example:
-    rails generate backgroundrb:bdrb_migration BackgroundrbJob
+    rails generate backgroundrb:bdrb_migration
 
     Assuming this is run at 09:00:15h on 12 September, 2008, this will create the
     CreateBackgroundrbQueue migration in:
 
-        db/migrate/20080912090015_backgroundrb_create_backgroundrb_jobs.rb
+        db/migrate/20080912090015_backgroundrb_create_backgroundrb_queue_table.rb
 
