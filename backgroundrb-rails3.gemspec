@@ -5,14 +5,16 @@
 
 Gem::Specification.new do |s|
   s.name = %q{backgroundrb-rails3}
-  s.version = "1.1.2"
+  s.version = "1.1.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Matteo Latini"]
-  s.date = %q{2010-12-14}
+  s.date = %q{2010-12-29}
   s.description = %q{
     BackgrounDRb is a Ruby job server and scheduler. Its main intent is to be used with Ruby on Rails applications for offloading long-running tasks. 
-    Since a Rails application blocks while serving a request it is best to move long-running tasks off into a background process that is divorced from http request/response cycle.}
+    Since a Rails application blocks while serving a request it is best to move long-running tasks off into a background process that is divorced from http request/response cycle.
+    This is the RoR 3 version (Railtie based) of the gem. Please read the GitHub homepage for installation instructions.
+  }
   s.email = %q{mtylty@gmail.com}
   s.extra_rdoc_files = [
     "ChangeLog",
