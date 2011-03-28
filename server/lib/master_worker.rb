@@ -35,15 +35,15 @@ module BackgrounDRb
           if t_data
             case t_data[:type]
               # async method invocation
-            when :async_invoke: async_method_invoke(t_data)
+            when :async_invoke  then async_method_invoke(t_data)
               # get status/result
-            when :get_result: get_result_object(t_data)
+            when :get_result then get_result_object(t_data)
               # sync method invocation
-            when :sync_invoke: method_invoke(t_data)
-            when :start_worker: start_worker_request(t_data)
-            when :delete_worker: delete_drb_worker(t_data)
-            when :worker_info: pass_worker_info(t_data)
-            when :all_worker_info: all_worker_info(t_data)
+            when :sync_invoke then method_invoke(t_data)
+            when :start_worker then start_worker_request(t_data)
+            when :delete_worker then delete_drb_worker(t_data)
+            when :worker_info then pass_worker_info(t_data)
+            when :all_worker_info then all_worker_info(t_data)
             else; debug_logger.info("Invalid request")
             end
           end

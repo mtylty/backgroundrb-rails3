@@ -7,8 +7,8 @@ class LogWorker < Packet::Worker
 
   def receive_data p_data
     case p_data[:type]
-    when :request: process_request(p_data)
-    when :response: process_response(p_data)
+    when :request then process_request(p_data)
+    when :response then process_response(p_data)
     end
   end
 
