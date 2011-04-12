@@ -1,4 +1,4 @@
-require File.join(File.dirname(__FILE__) + "/..","bdrb_test_helper")
+require File.join(".", File.dirname(__FILE__) + "/..","bdrb_test_helper")
 
 context "Cront Trigger in general" do
   specify "should let tasks running at given time interval run" do

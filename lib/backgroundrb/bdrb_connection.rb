@@ -18,8 +18,8 @@ module BackgrounDRb
           @connection.setsockopt(Socket::IPPROTO_TCP,Socket::TCP_NODELAY,1)
         end
         @connection_status = true
-      rescue Timeout::Error
-        @connection_status = false
+      #rescue Timeout::Error
+      #  @connection_status = false
       rescue Exception => e
         @connection_status = false
       end

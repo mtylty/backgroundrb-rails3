@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+require 'logger'
 module BackgrounDRb
   # Class wraps a logger object for debugging internal errors within server
   class DebugMaster
@@ -7,9 +8,9 @@ module BackgrounDRb
       @log_mode = log_mode
       @log_flag = log_flag
       if @log_mode == :foreground
-        @logger = ::Logger.new(STDOUT)
+        @logger = Logger.new(STDOUT)
       else
-        @logger = ::Logger.new("#{RAILS_HOME}/log/backgroundrb_debug_#{BDRB_CONFIG[:backgroundrb][:port]}.log")
+        @logger = Logger.new("#{RAILS_HOME}/log/backgroundrb_debug_#{BDRB_CONFIG[:backgroundrb][:port]}.log")
       end
     end
 

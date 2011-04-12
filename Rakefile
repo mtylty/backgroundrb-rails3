@@ -2,7 +2,9 @@ require 'rake'
 require 'rubygems'
 require 'rake/testtask'
 require 'rake/rdoctask'
-require 'spec/rake/spectask'
+#require 'spec/rake/spectask'
+#require 'rspec_helper'
+require 'rspec/core/rake_task'
 require 'rake/contrib/sshpublisher'
 
 desc 'Default: run unit tests.'
@@ -16,10 +18,11 @@ Rake::TestTask.new(:test) do |t|
 end
 
 desc "Run all specs"
-Spec::Rake::SpecTask.new('specs') do |t|
-  t.spec_opts = ["--format", "specdoc"]
-  t.libs = ['lib', 'server/lib' ]
-  t.spec_files = FileList['specs/**/*_spec.rb']
+#Spec::Rake::SpecTask.new('specs') do |t|
+RSpec::Core::RakeTask.new('specs') do |t|
+  t.rspec_opts = ["--format", "specdoc"]
+  #t.libs = ['lib', 'server/lib' ]
+  t.pattern = FileList['specs/**/*_spec.rb']
 end
 
 desc "RCov"
