@@ -34,9 +34,6 @@ context "For Cluster connection" do
 
   specify "should read config file and connect to specified servers" do
     @cluster_connection.backend_connections.length.should == 4
-	puts "__________________________"
-	puts @cluster_connection.bdrb_servers.inspect
-	puts "__________________________"
     @cluster_connection.bdrb_servers.length.should == 4
     @cluster_connection.ivar(:round_robin).length.should == 4
     @cluster_connection.backend_connections[0].server_info.should == "localhost:11001"

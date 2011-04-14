@@ -22,8 +22,8 @@ class BDRB_CONFIG
 end
 
 RAILS_HOME = File.expand_path(File.join(File.dirname(__FILE__) + "/../../../..")) unless defined?(RAILS_HOME)
-PACKET_APP = RAILS_HOME + "/vendor/gems/backgroundrb-rails3" unless defined?(PACKET_APP)
-WORKER_ROOT = RAILS_HOME + "/vendor/gems/backgroundrb-rails3/test/workers" unless defined?(WORKER_ROOT)
+PACKET_APP = File.expand_path(File.join(File.dirname(__FILE__) + "/../")) unless defined?(PACKET_APP)
+WORKER_ROOT = File.join(PACKET_APP , "test", "workers") unless defined?(WORKER_ROOT)
 SERVER_LOGGER = RAILS_HOME + "/log/backgroundrb_debug.log" unless defined?(SERVER_LOGGER)
 
 ["server","server/lib","lib","lib/backgroundrb"].each { |x| $LOAD_PATH.unshift(PACKET_APP + "/#{x}")}
