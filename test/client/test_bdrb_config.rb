@@ -1,5 +1,5 @@
-require File.join(File.dirname(__FILE__) + "/../bdrb_test_helper")
-require File.join(File.dirname(__FILE__) + "/../bdrb_client_test_helper")
+require File.join(".", File.dirname(__FILE__) + "/../bdrb_test_helper")
+require File.join(".", File.dirname(__FILE__) + "/../bdrb_client_test_helper")
 
 context "For BackgrounDRb config" do
   conf_file = File.join(File.dirname(__FILE__),"backgroundrb.yml")

@@ -1,4 +1,5 @@
-require File.join(File.dirname(__FILE__) + "/..","bdrb_test_helper")
+require 'mocha'
+require File.join(".", File.dirname(__FILE__) + "/..","bdrb_test_helper")
 
 
 context "Master Worker in general should" do
@@ -140,6 +141,7 @@ context "Master Worker in general should" do
   specify "should remove the worker from list if error while fetching results" do
     c = {:type=>:get_result, :worker=>:foo_worker, :job_key=>:start_message}
     @master_worker.ask_for_exception(:disconnect)
+    require 'mocha'
     t_reactor = mock()
     live_workers = mock()
     live_workers.expects(:delete).returns(true)

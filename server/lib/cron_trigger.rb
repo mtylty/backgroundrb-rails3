@@ -1,3 +1,7 @@
+# TODO:::: i just replaced retry with redo. becuase retry not responding with 1.9.2.
+# that is why we just need to check code again that can we use redo or 
+# we need any other workaround
+
 module BackgrounDRb
   class CronTrigger
     WDAYS = { 0 => "Sunday",1 => "Monday",2 => "Tuesday",3 => "Wednesday", 4 => "Thursday", 5 => "Friday", 6 => "Saturday" }
@@ -35,7 +39,8 @@ module BackgrounDRb
           if next_month < @t_month
             @t_month = next_month
             @t_year += 1
-            retry
+            #retry
+            redo
           end
           @t_month = next_month
         end
@@ -47,7 +52,8 @@ module BackgrounDRb
             t_time = Chronic.parse("next #{WDAYS[next_wday]}",:now => current_time)
             @t_day,@t_month,@t_year = t_time.to_a[3..5]
             @t_wday = next_wday
-            retry
+            #retry
+            redo
           end
         elsif !wday_restricted? && day_restricted?
           day_range = (1.. month_days(@t_year,@t_month))
@@ -60,7 +66,8 @@ module BackgrounDRb
               t_time = Chronic.parse("next month",:now => current_time)
               @t_day = next_day.nil? ? @day.min : next_day
               @t_month,@t_year = t_time.month,t_time.year
-              retry
+              redo
+              #retry
             end
             @t_day = next_day
           end
@@ -86,7 +93,7 @@ module BackgrounDRb
             else
               @t_day,@t_month,@t_year = next_time_wday.to_a[3..5]
             end
-            retry
+            redo #retry
           end
         end
 
@@ -97,7 +104,7 @@ module BackgrounDRb
             @t_hour = next_hour
             next_day = Chronic.parse("next day",:now => current_time)
             @t_day,@t_month,@t_year,@t_wday = next_day.to_a[3..6]
-            retry
+            redo #retry
           end
           @t_hour = next_hour
         end
@@ -109,7 +116,7 @@ module BackgrounDRb
             @t_min = next_min
             next_hour = Chronic.parse("next hour",:now => current_time)
             @t_hour,@t_day,@t_month,@t_year,@t_wday = next_hour.to_a[2..6]
-            retry
+            redo #retry
           end
           @t_min = next_min
         end
@@ -120,7 +127,7 @@ module BackgrounDRb
             @t_sec = next_sec
             next_min = Chronic.parse("next minute",:now => current_time)
             @t_min,@t_hour,@t_day,@t_month,@t_year,@t_wday = next_min.to_a[1..6]
-            retry
+            redo #retry
           end
           @t_sec = next_sec
         end

@@ -1,4 +1,4 @@
-require File.join(File.dirname(__FILE__) + "/../bdrb_test_helper")
+require File.join(".", File.dirname(__FILE__) + "/../bdrb_test_helper")
 require "meta_worker"
 require "chronic"
 
