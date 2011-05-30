@@ -11,10 +11,12 @@ module BackgrounDRb
       end
 
       # status == 3, not running.
-      STDOUT.sync = true
-      print("Starting BackgrounDRb .... ")
+      $stdout.sync = true
+      print "Starting BackgrounDRb.... "
       start_bdrb
-      puts "Success!"
+      # TODO: find a way to report success/failure
+      puts "Done!"
+      exit(0)
     end
 
     def stop
@@ -35,7 +37,7 @@ module BackgrounDRb
     # 1 program is dead and /var/run pid file exists
     # 3 program is not running
     def status
-      @status ||= begin
+      @status = begin
                     if pidfile_exists? and process_running?
                       0
                     elsif pidfile_exists? # but not process_running
@@ -93,8 +95,7 @@ module BackgrounDRb
 
       #proper way to daemonize - double fork to ensure parent can have no interest in the grandchild
       if fork                     # Parent exits, child continues.
-        sleep(5)
-        exit(0)
+        sleep(1)
       else
         Process.setsid                   # Become session leader.
 
