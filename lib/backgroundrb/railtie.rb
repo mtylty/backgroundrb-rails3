@@ -28,7 +28,9 @@ module BackgrounDRb
     end
     BackgrounDRb::BACKGROUNDRB_ROOT = config.bdrb.root
     config.before_configuration do
-      RAILS_HOME ||= Rails.root # required when "rails s" server started because RAILS_HOME not found 
+      # required when "rails s" server started because RAILS_HOME not found
+      RAILS_HOME = Rails.root unless const_defined?(:RAILS_HOME)
+
       config_file = "#{RAILS_HOME}/config/backgroundrb.yml"
 
       if File.exists?(config_file) && !config.bdrb.has_key?(:config)
