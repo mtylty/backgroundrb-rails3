@@ -126,6 +126,6 @@ Jeweler::Tasks.new do |gem|
   }
   gem.email = "mtylty@gmail.com"
   gem.authors = ["Matteo Latini"]
-  gem.version = "1.1.4"
+  gem.version = "1.1.5"
 end
 Jeweler::RubygemsDotOrgTasks.new
