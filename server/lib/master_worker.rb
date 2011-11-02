@@ -127,7 +127,7 @@ module BackgrounDRb
     end
 
     def worker_methods worker_name_key
-      reactor.live_workers[worker_name_key].invokable_worker_methods
+      reactor.live_workers[worker_name_key].invokable_worker_methods.collect { |i| i.to_s }
     end
 
     # Given a cache key, ask the worker for result stored in it.
