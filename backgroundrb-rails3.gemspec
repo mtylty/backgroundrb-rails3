@@ -4,18 +4,14 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{backgroundrb-rails3}
+  s.name = "backgroundrb-rails3"
   s.version = "1.1.6"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = [%q{Matteo Latini}]
-  s.date = %q{2011-05-30}
-  s.description = %q{
-    BackgrounDRb is a Ruby job server and scheduler. Its main intent is to be used with Ruby on Rails applications for offloading long-running tasks. 
-    Since a Rails application blocks while serving a request it is best to move long-running tasks off into a background process that is divorced from http request/response cycle.
-    This is the RoR 3 version (Railtie based) of the gem. Please read the GitHub homepage for installation instructions.
-  }
-  s.email = %q{mtylty@gmail.com}
+  s.authors = ["Matteo Latini"]
+  s.date = "2011-11-02"
+  s.description = "\n    BackgrounDRb is a Ruby job server and scheduler. Its main intent is to be used with Ruby on Rails applications for offloading long-running tasks. \n    Since a Rails application blocks while serving a request it is best to move long-running tasks off into a background process that is divorced from http request/response cycle.\n    This is the RoR 3 version (Railtie based) of the gem. Please read the GitHub homepage for installation instructions.\n  "
+  s.email = "mtylty@gmail.com"
   s.extra_rdoc_files = [
     "ChangeLog",
     "LICENSE",
@@ -148,11 +144,11 @@ Gem::Specification.new do |s|
     "test/workers/foo_worker.rb",
     "uninstall.rb"
   ]
-  s.homepage = %q{http://github.com/mtylty/backgroundrb-rails3}
-  s.licenses = [%q{MIT}]
-  s.require_paths = [%q{lib}]
-  s.rubygems_version = %q{1.8.4}
-  s.summary = %q{BackgrounDRb is a Ruby job server and scheduler.}
+  s.homepage = "http://github.com/mtylty/backgroundrb-rails3"
+  s.licenses = ["MIT"]
+  s.require_paths = ["lib"]
+  s.rubygems_version = "1.8.10"
+  s.summary = "BackgrounDRb is a Ruby job server and scheduler."
   s.test_files = [
     "examples/foo_controller.rb",
     "examples/god_worker.rb",
